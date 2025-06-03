@@ -4,3 +4,67 @@ body {
     padding: 0;
     background-color: #f8f8f8;
 }
+
+header {
+    background-color: lightgray;
+    margin: 0;
+    padding: 15px 20px;
+    border-style: solid;
+    border-color: gray;
+}
+
+h1 {
+    color: #696663;
+    margin: 0;
+}
+
+footer {
+    background-color: lightgray;
+    border-style: solid;
+    border-color: gray;
+    height: 5vh;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.playlist-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+    align-items: center;
+    padding: 30px;
+    gap: 30px;
+}
+
+.card {
+    border-style: solid;
+    border-color: black;
+    border-radius: 5%;
+    overflow: hidden;
+    width: 250px;
+    padding: 5px;
+}
+
+.card-info {
+    padding-left: 5px;
+    color: #555464;
+}
+
+.like-count-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.title {
+    margin: 0;
+}
+
+.creator {
+    margin: 0;
+}
+
+.like-count {
+    margin: 0;
+}
