@@ -57,15 +57,7 @@ footer {
     flex-direction: row;
 }
 
-.title {
-    margin: 0;
-}
-
-.creator {
-    margin: 0;
-}
-
-.like-count {
+h2, h3, p {
     margin: 0;
 }
 
@@ -98,6 +90,8 @@ footer {
         "song-list song-list song-list";
     justify-items: center;
     align-items: center;
+
+    color: #555464;;
 }
 
 .playlist-image {
@@ -106,8 +100,22 @@ footer {
 
 .playlist-info {
     grid-area: playlist-info;
+    width: 100%;
+
 }
 
 .song-list {
     grid-area: song-list;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.song-card  {
+    border-style: solid;
+    height: 100px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
