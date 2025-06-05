@@ -20,6 +20,7 @@ h1 {
     font-weight: 900;
     text-align: center;
     font-style: italic;
+    padding: 20px;
 }
 
 .page-layout {
@@ -110,7 +111,7 @@ h2, h3, p {
     width: 60%;
     border-radius: 25px;
 
-    box-shadow: 0px 5px 30px rgb(0, 0, 0, 0.2);
+    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.8);
 
     display: grid;
     grid-template-columns: 1fr 1fr 5fr;
@@ -227,10 +228,10 @@ h2, h3, p {
 
 .heart-icon:hover {
     transform: scale(1.6);
-    filter: invert(23%) sepia(31%) saturate(7112%) hue-rotate(345deg) brightness(108%) contrast(82%);;
 }
 
 .heart-icon:active {
+    
     transform: scale(0.9);
 }
 
@@ -247,7 +248,67 @@ button {
 }
 
 .liked {
+    filter: invert(23%) sepia(31%) saturate(7112%) hue-rotate(345deg) brightness(108%) contrast(82%);;
     overflow: hidden;
-    border-bottom-style: dotted;
 
+}
+
+nav {
+    border-style: solid;
+    border-color: white;
+}
+
+.navlink {
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.navlink:hover {
+    font-weight: 800;
+}
+
+.current {
+    text-decoration: underline;
+}
+
+.navlink:active {
+    color: aquamarine;
+}
+
+.featured-layout {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    padding: 50px;
+    color: #555464;
+    gap: 20px
+}
+
+.featured-playlist-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+.featured-playlist-image {
+    border-radius: 5%;
+    box-shadow: 0px 0px 8px rgb(0, 0, 0, 0.5);
+}
+
+.featured-playlist-name {
+    font-size: 50px;
+}
+
+.featured-playlist-author {
+    font-size: 25px;
+}
+
+.featured-song-container {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 80vh;
+    overflow: scroll;
 }

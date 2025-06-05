@@ -42,6 +42,7 @@ function addCardListeners() {
     }
 }
 
+
 function addModalListeners() {
 // Add modal event listeners. Be midful of ignoring clicks in content
 modal.addEventListener("click", hideModal);
@@ -51,6 +52,7 @@ document
         event.stopPropagation();
     });
 }
+
 
 function loadPlaylists() {
     console.log("Loading Playlists");
@@ -95,6 +97,7 @@ function loadPlaylists() {
         });
 }
 
+
 function createPlaylistCard(playlist) {
     let card = document.createElement("article");
     card.classList.add("card");
@@ -122,6 +125,7 @@ function createPlaylistCard(playlist) {
     `;
     return card;
 }
+
 
 function createSongCard(song) {
     let card = document.createElement("article");
@@ -152,6 +156,7 @@ function createSongCard(song) {
     return card
 }
 
+
 function showNoData() {
     let container = document.getElementById('playlist-container')
     container.classList.add('container-no-data')
@@ -161,6 +166,7 @@ function showNoData() {
     container.appendChild(notification)
 
 }
+
 
 function toggleLike(btn) {
     console.log("Like button clicked");
@@ -180,6 +186,7 @@ function toggleLike(btn) {
     count.textContent = newCount;
 }
 
+
 function dislaySongs(songs) {
     songs.forEach(song => {
         // console.log(song)
@@ -187,6 +194,7 @@ function dislaySongs(songs) {
         document.getElementById('song-list-container').appendChild(newSong)
     })
 }
+
 
 function shuffle(btn) {
     let container = btn.parentElement.querySelector('#song-list-container');
@@ -206,6 +214,7 @@ function shuffle(btn) {
     }
 }
 
+
 function shuffleArray(array) {
     let currentIndex = array.length, randomIndex;
 
@@ -224,5 +233,46 @@ function shuffleArray(array) {
     return array;
 }
 
-loadPlaylists();
-addModalListeners();
+
+function populateFeaturedPlaylist() {
+    fetch("./data/data.json")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Could not load data");
+            }
+            return response.json();
+        }).then(data => {
+            currentData = data
+            
+            let randomPlaylist = data[Math.floor(Math.random() * data.length)]
+            //console.log(randomPlaylist)
+
+            document.querySelector('.featured-playlist-image').src = randomPlaylist.playlist_art
+            document.querySelector('.featured-playlist-name').textContent = randomPlaylist.playlist_name
+            document.querySelector('.featured-playlist-author').textContent = randomPlaylist.playlist_author
+
+            displayFeaturedSongs(randomPlaylist.songs)
+        
+        }).catch((error) => {
+            console.log("Caught an error: " + error);
+        });
+}
+
+
+function displayFeaturedSongs(songs) {
+    songs.forEach(song => {
+        let newCard = createSongCard(song)
+        document.querySelector('.featured-song-container').appendChild(newCard)
+    })
+}
+
+
+if (window.location.pathname.endsWith("index.html") || window.location.pathname === "/") {
+    console.log("This code is running inside index.html");
+    loadPlaylists();
+    addModalListeners();
+} else if (window.location.pathname.endsWith("featured.html")) {
+    console.log("Running featured page code")
+    populateFeaturedPlaylist()
+}
+
