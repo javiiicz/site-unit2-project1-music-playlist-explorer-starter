@@ -111,12 +111,14 @@ function createPlaylistCard(playlist) {
         <h2 class="title">${playlist.playlist_name}</h2>
         <p class="creator">${playlist.playlist_author}</p>
         <div class="like-count-container">
-            <img
-                src="./assets/img/heart-svgrepo-com.svg"
-                width="20px"
-                alt="Heart icon"
-            />
-            <p class="like_count">${playlist.like_count}</p>
+            <button class="heart-icon" data-isliked="false" onclick='event.stopPropagation();toggleLike(this)'>
+                <img
+                    src="./assets/img/heart-svgrepo-com.svg"
+                    width="20px"
+                    alt="Heart icon"
+                />
+            </button>
+            <p class="like-count">${playlist.like_count}</p>
         </div>
     </div>
     `;
@@ -160,6 +162,24 @@ function showNoData() {
     notification.innerHTML = "<h2>No playlists to show</h2>"
     container.appendChild(notification)
 
+}
+
+function toggleLike(btn) {
+    console.log("Like button clicked");
+    let count = btn.parentElement.querySelector('.like-count')
+    let newCount;
+
+    if (btn.dataset.isliked === "false") {
+        newCount = parseInt(count.textContent) + 1
+        btn.dataset.isliked = 'true'
+        btn.querySelector('img').classList.add('liked')
+    } else {
+        newCount = parseInt(count.textContent) - 1
+        btn.dataset.isliked = 'false'
+        btn.querySelector('img').classList.remove('liked')
+    }
+
+    count.textContent = newCount;
 }
 
 loadPlaylists();
