@@ -14,12 +14,10 @@ function showModal(id) {
     document.getElementById('modal-name').textContent = playlist.playlist_name
     document.getElementById('modal-author').textContent = playlist.playlist_author
 
+    
     // Populate the song list
-    modal_songs.forEach(song => {
-        console.log(song)
-        let newSong = createSongCard(song)
-        document.getElementById('song-list-container').appendChild(newSong)
-    })
+    dislaySongs(modal_songs, false)
+    
 
     modal.classList.add("show-overlay");
 }
@@ -37,7 +35,7 @@ function addCardListeners() {
     let cards = document.getElementsByClassName("card");
 
     for (let item of cards) {
-        //console.log(item)
+        // console.log(item)
         item.addEventListener("click", () => {
             showModal(parseInt(item.dataset.id))
         });
@@ -180,6 +178,50 @@ function toggleLike(btn) {
     }
 
     count.textContent = newCount;
+}
+
+function dislaySongs(songs) {
+    songs.forEach(song => {
+        // console.log(song)
+        let newSong = createSongCard(song)
+        document.getElementById('song-list-container').appendChild(newSong)
+    })
+}
+
+function shuffle(btn) {
+    let container = btn.parentElement.querySelector('#song-list-container');
+
+    let newSongArray = [];
+    let songs = container.children;
+    for (let i = 0; i < songs.length; i++) {
+        newSongArray.push(songs[i])
+    }
+
+    newSongArray = shuffleArray(newSongArray)
+    container.innerHTML = ""
+
+    for (let i = 0; i < newSongArray.length; i++) {
+        //console.log(i, newSongArray[i])
+        container.appendChild(newSongArray[i])
+    }
+}
+
+function shuffleArray(array) {
+    let currentIndex = array.length, randomIndex;
+
+    // While there remain elements to shuffle.
+    while (currentIndex != 0) {
+
+        // Pick a remaining element.
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+
+        // And swap it with the current element.
+        [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+    }
+
+    return array;
 }
 
 loadPlaylists();
