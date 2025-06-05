@@ -18,159 +18,8 @@
             </header>
             <main>
                 <!-- Your main content here -->
-                <section class="playlist-cards">
-                    <article class="card">
-                        <img
-                            src="./assets/img/playlist.png"
-                            width="100%"
-                            alt="Playlist placeholder"
-                        />
-                        <div class="card-info">
-                            <h2 class="title">Playlist Title</h2>
-                            <p class="creator">Creator Name</p>
-                            <div class="like-count-container">
-                                <img
-                                    src="./assets/img/heart-svgrepo-com.svg"
-                                    width="20px"
-                                    alt="Heart icon"
-                                />
-                                <p class="like-count">5</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img
-                            src="./assets/img/playlist.png"
-                            width="100%"
-                            alt="Playlist placeholder"
-                        />
-                        <div class="card-info">
-                            <h2 class="title">Playlist Title</h2>
-                            <p class="creator">Creator Name</p>
-                            <div class="like-count-container">
-                                <img
-                                    src="./assets/img/heart-svgrepo-com.svg"
-                                    width="20px"
-                                    alt="Heart icon"
-                                />
-                                <p class="like-count">5</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img
-                            src="./assets/img/playlist.png"
-                            width="100%"
-                            alt="Playlist placeholder"
-                        />
-                        <div class="card-info">
-                            <h2 class="title">Playlist Title</h2>
-                            <p class="creator">Creator Name</p>
-                            <div class="like-count-container">
-                                <img
-                                    src="./assets/img/heart-svgrepo-com.svg"
-                                    width="20px"
-                                    alt="Heart icon"
-                                />
-                                <p class="like-count">5</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img
-                            src="./assets/img/playlist.png"
-                            width="100%"
-                            alt="Playlist placeholder"
-                        />
-                        <div class="card-info">
-                            <h2 class="title">Playlist Title</h2>
-                            <p class="creator">Creator Name</p>
-                            <div class="like-count-container">
-                                <img
-                                    src="./assets/img/heart-svgrepo-com.svg"
-                                    width="20px"
-                                    alt="Heart icon"
-                                />
-                                <p class="like-count">5</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img
-                            src="./assets/img/playlist.png"
-                            width="100%"
-                            alt="Playlist placeholder"
-                        />
-                        <div class="card-info">
-                            <h2 class="title">Playlist Title</h2>
-                            <p class="creator">Creator Name</p>
-                            <div class="like-count-container">
-                                <img
-                                    src="./assets/img/heart-svgrepo-com.svg"
-                                    width="20px"
-                                    alt="Heart icon"
-                                />
-                                <p class="like-count">5</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img
-                            src="./assets/img/playlist.png"
-                            width="100%"
-                            alt="Playlist placeholder"
-                        />
-                        <div class="card-info">
-                            <h2 class="title">Playlist Title</h2>
-                            <p class="creator">Creator Name</p>
-                            <div class="like-count-container">
-                                <img
-                                    src="./assets/img/heart-svgrepo-com.svg"
-                                    width="20px"
-                                    alt="Heart icon"
-                                />
-                                <p class="like-count">5</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img
-                            src="./assets/img/playlist.png"
-                            width="100%"
-                            alt="Playlist placeholder"
-                        />
-                        <div class="card-info">
-                            <h2 class="title">Playlist Title</h2>
-                            <p class="creator">Creator Name</p>
-                            <div class="like-count-container">
-                                <img
-                                    src="./assets/img/heart-svgrepo-com.svg"
-                                    width="20px"
-                                    alt="Heart icon"
-                                />
-                                <p class="like-count">5</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="card">
-                        <img
-                            src="./assets/img/playlist.png"
-                            width="100%"
-                            alt="Playlist placeholder"
-                        />
-                        <div class="card-info">
-                            <h2 class="title">Playlist Title</h2>
-                            <p class="creator">Creator Name</p>
-                            <div class="like-count-container">
-                                <img
-                                    src="./assets/img/heart-svgrepo-com.svg"
-                                    width="20px"
-                                    alt="Heart icon"
-                                />
-                                <p class="like-count">5</p>
-                            </div>
-                        </div>
-                    </article>
+                <section id="playlist-container" class="playlist-cards">
+
                 </section>
             </main>
             <footer>
@@ -182,62 +31,20 @@
             <div id="modal-cont" class="modal-content">
                 <div class="playlist-image">
                     <img
+                        id="modal-img"
                         src="./assets/img/playlist.png"
                         width="100%"
-                        alt="Playlist placeholder"
+                        alt="Playlist Art"
                     />
                 </div>
 
                 <div class="playlist-info">
-                    <h2 class="modal-playlist-name">Playlist Name</h2>
-                    <p class="modal-playlist-creator">Creator Name</p>
+                    <h2 id='modal-name' class="modal-playlist-name">Playlist Name</h2>
+                    <p id='modal-author' class="modal-playlist-creator">Creator Name</p>
                 </div>
 
-                <div class="song-list">
-                    <div class="song-card">
-                        <img
-                            src="./assets/img/song.png"
-                            alt="Song Placeholder"
-                            height="100%"
-                        />
-                        <div class="song-info">
-                            <h3 class="song-title">Song Title</h3>
-                            <p class="song-artist">Artist Name</p>
-                            <p class="song-album">Album Name</p>
-                        </div>
-                        
-                        <p class="song-duration">0:00</p>
-                    </div>
-
-                    <div class="song-card">
-                        <img
-                            src="./assets/img/song.png"
-                            alt="Song Placeholder"
-                            height="100%"
-                        />
-                        <div class="song-info">
-                            <h3 class="song-title">Song Title</h3>
-                            <p class="song-artist">Artist Name</p>
-                            <p class="song-album">Album Name</p>
-                        </div>
-                        
-                        <p class="song-duration">0:00</p>
-                    </div>
-
-                    <div class="song-card">
-                        <img
-                            src="./assets/img/song.png"
-                            alt="Song Placeholder"
-                            height="100%"
-                        />
-                        <div class="song-info">
-                            <h3 class="song-title">Song Title</h3>
-                            <p class="song-artist">Artist Name</p>
-                            <p class="song-album">Album Name</p>
-                        </div>
-                        
-                        <p class="song-duration">0:00</p>
-                    </div>
+                <div id='song-list-container' class="song-list">
+                    
                 </div>
             </div>
         </div>

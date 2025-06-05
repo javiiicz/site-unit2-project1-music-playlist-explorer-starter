@@ -1,0 +1,242 @@
+[
+    {
+        "playlistID": 1,
+        "playlist_name": "Favorite Hits",
+        "playlist_author": "John Doe",
+        "playlist_art": "../assets/art/sea.jpg",
+        "songs": [
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Hit Song 1",
+                "song_artist": "Artist A",
+                "song_album": "Album X",
+                "song_duration": 210
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Hit Song 2",
+                "song_artist": "Artist B",
+                "song_album": "Album Y",
+                "song_duration": 180
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Hit Song 3",
+                "song_artist": "Artist C",
+                "song_album": "Album Z",
+                "song_duration": 240
+            }
+        ],
+        "like_count": 23
+    },
+    {
+        "playlistID": 2,
+        "playlist_name": "Relaxing Music",
+        "playlist_author": "Jane Smith",
+        "playlist_art": "./assets/art/relax.jpg",
+        "songs": [
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Relax Song 1",
+                "song_artist": "Artist D",
+                "song_album": "Album W",
+                "song_duration": 300
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Relax Song 2",
+                "song_artist": "Artist E",
+                "song_album": "Album V",
+                "song_duration": 320
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Relax Song 3",
+                "song_artist": "Artist F",
+                "song_album": "Album U",
+                "song_duration": 280
+            }
+        ],
+        "like_count": 0
+    },
+    {
+        "playlistID": 3,
+        "playlist_name": "Workout Playlist",
+        "playlist_author": "Bob Johnson",
+        "playlist_art": "./assets/art/workout.jpg",
+        "songs": [
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Workout Song 1",
+                "song_artist": "Artist G",
+                "song_album": "Album T",
+                "song_duration": 260
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Workout Song 2",
+                "song_artist": "Artist H",
+                "song_album": "Album S",
+                "song_duration": 230
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Workout Song 3",
+                "song_artist": "Artist I",
+                "song_album": "Album R",
+                "song_duration": 250
+            }
+        ],
+        "like_count": 3
+    },
+    {
+        "playlistID": 4,
+        "playlist_name": "Road Trip Mix",
+        "playlist_author": "Emily Chen",
+        "playlist_art": "./assets/art/roadtrip.jpg",
+        "songs": [
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Road Song 1",
+                "song_artist": "Artist J",
+                "song_album": "Album Q",
+                "song_duration": 270
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Road Song 2",
+                "song_artist": "Artist K",
+                "song_album": "Album P",
+                "song_duration": 290
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Road Song 3",
+                "song_artist": "Artist L",
+                "song_album": "Album O",
+                "song_duration": 310
+            }
+        ],
+        "like_count": 376
+    },
+    {
+        "playlistID": 5,
+        "playlist_name": "Dance Party",
+        "playlist_author": "Michael Brown",
+        "playlist_art": "./assets/art/dance.jpg",
+        "songs": [
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Dance Song 1",
+                "song_artist": "Artist M",
+                "song_album": "Album N",
+                "song_duration": 200
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Dance Song 2",
+                "song_artist": "Artist N",
+                "song_album": "Album M",
+                "song_duration": 220
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Dance Song 3",
+                "song_artist": "Artist O",
+                "song_album": "Album L",
+                "song_duration": 240
+            }
+        ],
+        "like_count": 1
+    },
+    {
+        "playlistID": 6,
+        "playlist_name": "Study Music",
+        "playlist_author": "Sarah Lee",
+        "playlist_art": "./assets/art/study.jpg",
+        "songs": [
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Study Song 1",
+                "song_artist": "Artist P",
+                "song_album": "Album K",
+                "song_duration": 330
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Study Song 2",
+                "song_artist": "Artist Q",
+                "song_album": "Album J",
+                "song_duration": 310
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Study Song 3",
+                "song_artist": "Artist R",
+                "song_album": "Album I",
+                "song_duration": 290
+            }
+        ],
+        "like_count": 23
+    },
+    {
+        "playlistID": 7,
+        "playlist_name": "Throwback Thursday",
+        "playlist_author": "David Kim",
+        "playlist_art": "./assets/art/thursday.jpg",
+        "songs": [
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Throwback Song 1",
+                "song_artist": "Artist S",
+                "song_album": "Album H",
+                "song_duration": 250
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Throwback Song 2",
+                "song_artist": "Artist T",
+                "song_album": "Album G",
+                "song_duration": 270
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Throwback Song 3",
+                "song_artist": "Artist U",
+                "song_album": "Album F",
+                "song_duration": 230
+            }
+        ],
+        "like_count": 45
+    },
+    {
+        "playlistID": 8,
+        "playlist_name": "Chillout Lounge",
+        "playlist_author": "Jessica Martin",
+        "playlist_art": "./assets/art/chillout.jpg",
+        "songs": [
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Chillout Song 1",
+                "song_artist": "Artist V",
+                "song_album": "Album E",
+                "song_duration": 260
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Chillout Song 2",
+                "song_artist": "Artist W",
+                "song_album": "Album D",
+                "song_duration": 280
+            },
+            {
+                "song_img": "./assets/img/song.png",
+                "song_name": "Chillout Song 3",
+                "song_artist": "Artist X",
+                "song_album": "Album C",
+                "song_duration": 300
+            }
+        ],
+        "like_count": 4
+    }
+]
