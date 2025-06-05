@@ -21,8 +21,20 @@
                     </ul>
                 </nav>
             </header>
-            <main>
+            <main class="home-main">
                 <!-- Your main content here -->
+                <section class="tools">
+                
+                    <div class="dropdown">
+                        <button onclick="toggleMenu()" class="dropbtn">Sort Playlists</button>
+                        <div id="myDropdown" class="dropdown-content">
+                            <button onclick="sortAlphabetically()">By Name</button>
+                            <button onclick="sortLikes()">By Like Count</button>
+                            <button onclick="sortDates()">By Date Added</button>
+                        </div>
+                    </div>
+
+                </section>
                 <section id="playlist-container" class="playlist-cards">
 
                 </section>
@@ -51,7 +63,7 @@
                 <div id='song-list-container' class="song-list">
                     
                 </div>
-
+                <button class="delete-btn" onclick="del_playlist(this)">Delete</button>
                 <button class="shuffle-btn" onclick="shuffle(this)">Shuffle</button>
             </div>
         </div>
