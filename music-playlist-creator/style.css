@@ -128,6 +128,12 @@ h2, h3, p {
 .playlist-image {
     grid-area: playlist-image;
     object-fit: cover;
+
+}
+
+#modal-img {
+
+    border-radius: 10px;
 }
 
 .playlist-info {
@@ -142,7 +148,10 @@ h2, h3, p {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 10px;
+    gap: 20px;
+    height: 400px;
+    overflow: scroll;
+    padding: 20px;
 }
 
 .song-card  {
@@ -152,8 +161,8 @@ h2, h3, p {
     align-items: center;
     gap: 10px;
     border-radius: 10px;
-
-    box-shadow: 0px 5px 4px rgb(0, 0, 0, 0.2);;
+    background-color: #f3f3f3;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0, 0.2);;
 }
 
 .modal-playlist-name {
@@ -164,4 +173,29 @@ h2, h3, p {
 .modal-playlist-creator {
     font-size: 25px;
     padding-left: 5px;
+}
+
+.title {
+    margin: 5px 0;
+}
+
+.creator {
+    margin: 5px 0;
+}
+
+.container-no-data {
+    justify-content: center;
+    align-items: center;
+}
+
+.duration-container {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    justify-self: stretch;
+}
+
+.song-duration {
+    padding-right: 30px;
+    font-weight: 600;
 }

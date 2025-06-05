@@ -1,22 +1,166 @@
-const modal = document.getElementById('modal');
-const content = document.getElementById('modal-cont')
+const modal = document.getElementById("modal");
+const content = document.getElementById("modal-cont");
+let currentData = [];
 
-function showModal() {
-    modal.classList.add('show-overlay')
-    content.classList.remove('hide-content')
+function showModal(id) {
+    // Given the id of the playlist we want to find the corresponding object in the data
+    // and populate the modal
+
+    let playlist = currentData.find(x => x.playlistID === id)
+
+    let modal_songs = playlist.songs
+
+    document.getElementById('modal-img').src = playlist.playlist_art
+    document.getElementById('modal-name').textContent = playlist.playlist_name
+    document.getElementById('modal-author').textContent = playlist.playlist_author
+
+    // Populate the song list
+    modal_songs.forEach(song => {
+        console.log(song)
+        let newSong = createSongCard(song)
+        document.getElementById('song-list-container').appendChild(newSong)
+    })
+
+    modal.classList.add("show-overlay");
 }
+
 
 function hideModal() {
-    modal.classList.remove('show-overlay')
-    content.classList.add('hide-content')
+    modal.classList.remove("show-overlay");
+
+    // handle the old songs
+    document.getElementById('song-list-container').innerHTML = "";
 }
 
-let cards = document.getElementsByClassName('card');
 
-for (let item of cards) {
-    console.log(item)
-    item.addEventListener('click', showModal)
+function addCardListeners() {
+    let cards = document.getElementsByClassName("card");
+
+    for (let item of cards) {
+        //console.log(item)
+        item.addEventListener("click", () => {
+            showModal(parseInt(item.dataset.id))
+        });
+    }
 }
 
-modal.addEventListener('click', hideModal)
-document.getElementById('modal-cont').addEventListener('click', function(event) {event.stopPropagation()})
+function addModalListeners() {
+// Add modal event listeners. Be midful of ignoring clicks in content
+modal.addEventListener("click", hideModal);
+document
+    .getElementById("modal-cont")
+    .addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+}
+
+function loadPlaylists() {
+    console.log("Loading Playlists");
+
+    // Fetching playlists from our json
+    fetch("./data/data.json")
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error("Could not load data");
+            }
+            return response.json();
+        })
+        .then((data) => {
+            if (data.length === 0) {
+                console.log("Empty data")
+                showNoData()
+                return
+            }
+
+            // Sort before (later)
+
+            currentData = data
+
+            // Convert each playlist into playlist card element
+            //console.log(data)
+            data.forEach((playlist) => {
+                //console.log('Creating playlist card for ' + playlist)
+                let newCard = createPlaylistCard(playlist);
+                //console.log(newCard);
+                document
+                    .getElementById("playlist-container")
+                    .appendChild(newCard);
+                //console.log("Card added!")
+            });
+
+            // Don't forget to re-add the event listeners!
+            addCardListeners()
+            console.log("succeess!");
+        })
+        .catch((error) => {
+            console.log("Caught an error: " + error);
+        });
+}
+
+function createPlaylistCard(playlist) {
+    let card = document.createElement("article");
+    card.classList.add("card");
+    card.dataset.id = playlist.playlistID;
+    card.innerHTML = 
+    `<img
+        src="${playlist.playlist_art}"
+        width="100%"
+        alt="Playlist Art"
+    />
+    <div class="card-info">
+        <h2 class="title">${playlist.playlist_name}</h2>
+        <p class="creator">${playlist.playlist_author}</p>
+        <div class="like-count-container">
+            <img
+                src="./assets/img/heart-svgrepo-com.svg"
+                width="20px"
+                alt="Heart icon"
+            />
+            <p class="like_count">${playlist.like_count}</p>
+        </div>
+    </div>
+    `;
+    return card;
+}
+
+function createSongCard(song) {
+    let card = document.createElement("article");
+    card.classList.add('song-card')
+    let duration = song.song_duration
+    let minutes = Math.floor(duration / 60)
+    let seconds = (duration % 60).toString().padStart(2, '0')
+    let durationDisplay = `${minutes}:${seconds}`
+
+    card.innerHTML = 
+    `
+    <img
+        src="${song.song_img}"
+        alt="Song Art"
+        height="100%"
+    />
+    <div class="song-info">
+        <h3 class="song-title">${song.song_name}</h3>
+        <p class="song-artist">${song.song_artist}</p>
+        <p class="song-album">${song.song_album}</p>
+    </div>
+    
+    <div class="duration-container">
+        <p class="song-duration">${durationDisplay}</p>
+    </div>
+    `
+
+    return card
+}
+
+function showNoData() {
+    let container = document.getElementById('playlist-container')
+    container.classList.add('container-no-data')
+
+    let notification = document.createElement('div')
+    notification.innerHTML = "<h2>No playlists to show</h2>"
+    container.appendChild(notification)
+
+}
+
+loadPlaylists();
+addModalListeners();

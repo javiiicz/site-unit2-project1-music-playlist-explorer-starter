@@ -1,0 +1,66 @@
+[
+    {
+        "playlistID": 1,
+        "playlist_name": "Favorite Hits",
+        "playlist_author": "John Doe",
+        "playlist_art": "../assets/art/sea.jpg",
+        "songs": [],
+        "like_count": 23
+    },
+    {
+        "playlistID": 2,
+        "playlist_name": "Relaxing Music",
+        "playlist_author": "Jane Smith",
+        "playlist_art": "./assets/art/relax.jpg",
+        "songs": [],
+        "like_count": 0
+    },
+    {
+        "playlistID": 3,
+        "playlist_name": "Workout Playlist",
+        "playlist_author": "Bob Johnson",
+        "playlist_art": "./assets/art/workout.jpg",
+        "songs": [],
+        "like_count": 3
+    },
+    {
+        "playlistID": 4,
+        "playlist_name": "Road Trip Mix",
+        "playlist_author": "Emily Chen",
+        "playlist_art": "./assets/art/roadtrip.jpg",
+        "songs": [],
+        "like_count": 376
+    },
+    {
+        "playlistID": 5,
+        "playlist_name": "Dance Party",
+        "playlist_author": "Michael Brown",
+        "playlist_art": "./assets/art/dance.jpg",
+        "songs": [],
+        "like_count": 1
+    },
+    {
+        "playlistID": 6,
+        "playlist_name": "Study Music",
+        "playlist_author": "Sarah Lee",
+        "playlist_art": "./assets/art/study.jpg",
+        "songs": [],
+        "like_count": 23
+    },
+    {
+        "playlistID": 7,
+        "playlist_name": "Throwback Thursday",
+        "playlist_author": "David Kim",
+        "playlist_art": "./assets/art/thursday.jpg",
+        "songs": [],
+        "like_count": 45
+    },
+    {
+        "playlistID": 8,
+        "playlist_name": "Chillout Lounge",
+        "playlist_author": "Jessica Martin",
+        "playlist_art": "./assets/art/chillout.jpg",
+        "songs": [],
+        "like_count": 4
+    }
+]
