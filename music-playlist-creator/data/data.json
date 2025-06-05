@@ -4,30 +4,31 @@
         "playlist_name": "Favorite Hits",
         "playlist_author": "John Doe",
         "playlist_art": "../assets/art/sea.jpg",
+        "date_added": "2023-10-01",
         "songs": [
             {
-                "song_img": "https://picsum.photos/512",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Hit Song 1",
                 "song_artist": "Artist A",
                 "song_album": "Album X",
                 "song_duration": 210
             },
             {
-                "song_img": "https://picsum.photos/511",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Hit Song 2",
                 "song_artist": "Artist B",
                 "song_album": "Album Y",
                 "song_duration": 180
             },
             {
-                "song_img": "https://picsum.photos/510",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Hit Song 3",
                 "song_artist": "Artist C",
                 "song_album": "Album Z",
                 "song_duration": 240
             },
             {
-                "song_img": "https://picsum.photos/509",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Hit Song 4",
                 "song_artist": "Artist D",
                 "song_album": "Album W",
@@ -41,23 +42,24 @@
         "playlist_name": "Relaxing Music",
         "playlist_author": "Jane Smith",
         "playlist_art": "./assets/art/relax.jpg",
+        "date_added": "2023-10-02",
         "songs": [
             {
-                "song_img": "https://picsum.photos/508",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Relax Song 1",
                 "song_artist": "Artist E",
                 "song_album": "Album V",
                 "song_duration": 300
             },
             {
-                "song_img": "https://picsum.photos/507",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Relax Song 2",
                 "song_artist": "Artist F",
                 "song_album": "Album U",
                 "song_duration": 320
             },
             {
-                "song_img": "https://picsum.photos/506",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Relax Song 3",
                 "song_artist": "Artist G",
                 "song_album": "Album T",
@@ -71,37 +73,38 @@
         "playlist_name": "Workout Playlist",
         "playlist_author": "Bob Johnson",
         "playlist_art": "./assets/art/workout.jpg",
+        "date_added": "2023-10-03",
         "songs": [
             {
-                "song_img": "https://picsum.photos/505",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Workout Song 1",
                 "song_artist": "Artist H",
                 "song_album": "Album S",
                 "song_duration": 260
             },
             {
-                "song_img": "https://picsum.photos/504",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Workout Song 2",
                 "song_artist": "Artist I",
                 "song_album": "Album R",
                 "song_duration": 230
             },
             {
-                "song_img": "https://picsum.photos/503",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Workout Song 3",
                 "song_artist": "Artist J",
                 "song_album": "Album Q",
                 "song_duration": 250
             },
             {
-                "song_img": "https://picsum.photos/502",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Workout Song 4",
                 "song_artist": "Artist K",
                 "song_album": "Album P",
                 "song_duration": 270
             },
             {
-                "song_img": "https://picsum.photos/501",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Workout Song 5",
                 "song_artist": "Artist L",
                 "song_album": "Album O",
@@ -115,30 +118,31 @@
         "playlist_name": "Road Trip Mix",
         "playlist_author": "Emily Chen",
         "playlist_art": "./assets/art/roadtrip.jpg",
+        "date_added": "2023-10-04",
         "songs": [
             {
-                "song_img": "https://picsum.photos/521",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Road Song 1",
                 "song_artist": "Artist M",
                 "song_album": "Album N",
                 "song_duration": 270
             },
             {
-                "song_img": "https://picsum.photos/520",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Road Song 2",
                 "song_artist": "Artist N",
                 "song_album": "Album M",
                 "song_duration": 290
             },
             {
-                "song_img": "https://picsum.photos/519",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Road Song 3",
                 "song_artist": "Artist O",
                 "song_album": "Album L",
                 "song_duration": 310
             },
             {
-                "song_img": "https://picsum.photos/518",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Road Song 4",
                 "song_artist": "Artist P",
                 "song_album": "Album K",
@@ -152,37 +156,38 @@
         "playlist_name": "Dance Party",
         "playlist_author": "Michael Brown",
         "playlist_art": "./assets/art/dance.jpg",
+        "date_added": "2023-10-05",
         "songs": [
             {
-                "song_img": "https://picsum.photos/517",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Dance Song 1",
                 "song_artist": "Artist Q",
                 "song_album": "Album J",
                 "song_duration": 200
             },
             {
-                "song_img": "https://picsum.photos/516",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Dance Song 2",
                 "song_artist": "Artist R",
                 "song_album": "Album I",
                 "song_duration": 220
             },
             {
-                "song_img": "https://picsum.photos/515",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Dance Song 3",
                 "song_artist": "Artist S",
                 "song_album": "Album H",
                 "song_duration": 240
             },
             {
-                "song_img": "https://picsum.photos/514",
+                "song_img": "httpsum.photos/500",
                 "song_name": "Dance Song 4",
                 "song_artist": "Artist T",
                 "song_album": "Album G",
                 "song_duration": 260
             },
             {
-                "song_img": "https://picsum.photos/513",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Dance Song 5",
                 "song_artist": "Artist U",
                 "song_album": "Album F",
@@ -196,23 +201,24 @@
         "playlist_name": "Study Music",
         "playlist_author": "Sarah Lee",
         "playlist_art": "./assets/art/study.jpg",
+        "date_added": "2023-10-06",
         "songs": [
             {
-                "song_img": "https://picsum.photos/512",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Study Song 1",
                 "song_artist": "Artist V",
                 "song_album": "Album E",
                 "song_duration": 330
             },
             {
-                "song_img": "https://picsum.photos/511",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Study Song 2",
                 "song_artist": "Artist W",
                 "song_album": "Album D",
                 "song_duration": 310
             },
             {
-                "song_img": "https://picsum.photos/510",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Study Song 3",
                 "song_artist": "Artist X",
                 "song_album": "Album C",
@@ -226,30 +232,31 @@
         "playlist_name": "Throwback Thursday",
         "playlist_author": "David Kim",
         "playlist_art": "./assets/art/thursday.jpg",
+        "date_added": "2023-10-07",
         "songs": [
             {
-                "song_img": "https://picsum.photos/508",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Throwback Song 1",
                 "song_artist": "Artist Y",
                 "song_album": "Album B",
                 "song_duration": 250
             },
             {
-                "song_img": "https://picsum.photos/507",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Throwback Song 2",
                 "song_artist": "Artist Z",
                 "song_album": "Album A",
                 "song_duration": 270
             },
             {
-                "song_img": "https://picsum.photos/506",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Throwback Song 3",
                 "song_artist": "Artist AA",
                 "song_album": "Album Z",
                 "song_duration": 230
             },
             {
-                "song_img": "https://picsum.photos/505",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Throwback Song 4",
                 "song_artist": "Artist BB",
                 "song_album": "Album Y",
@@ -263,6 +270,7 @@
         "playlist_name": "Chillout Lounge",
         "playlist_author": "Jessica Martin",
         "playlist_art": "./assets/art/chillout.jpg",
+        "date_added": "2023-10-08",
         "songs": [
             {
                 "song_img": "https://picsum.photos/500",
@@ -272,28 +280,28 @@
                 "song_duration": 260
             },
             {
-                "song_img": "https://picsum.photos/501",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Chillout Song 2",
                 "song_artist": "Artist DD",
                 "song_album": "Album W",
                 "song_duration": 280
             },
             {
-                "song_img": "https://picsum.photos/502",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Chillout Song 3",
                 "song_artist": "Artist EE",
                 "song_album": "Album V",
                 "song_duration": 300
             },
             {
-                "song_img": "https://picsum.photos/503",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Chillout Song 4",
                 "song_artist": "Artist FF",
                 "song_album": "Album U",
                 "song_duration": 320
             },
             {
-                "song_img": "https://picsum.photos/504",
+                "song_img": "https://picsum.photos/500",
                 "song_name": "Chillout Song 5",
                 "song_artist": "Artist GG",
                 "song_album": "Album T",
