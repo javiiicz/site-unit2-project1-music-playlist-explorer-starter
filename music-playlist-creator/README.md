@@ -52,14 +52,14 @@ Deployed Application: [Music Playlist Explorer Deployed Site](https://codepath-p
         -   [x] If previously liked:
             -   [x] The like count on the playlist tile should decrease by 1.
             -   [x] There should be visual feedback (such as the heart turning a different color) to show that the playlist has been unliked by the user.
-        -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please film yourself liking and unliking:
+        -   [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please film yourself liking and unliking:
             -   [x] a playlist with a like count of 0
             -   [x] a playlist with a non-zero like count
 
 -   [x] **Shuffle Songs**
     -   [x] Enable users to shuffle the songs within a playlist using a shuffle button in the playlist's detail modal.
     -   [x] When the shuffle button is clicked, the playlist's songs should display in a different order.
-    -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself shuffling the same playlist more than once.
+    -   [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself shuffling the same playlist more than once.
 -   [x] **Featured Page**
     -   [x] Application includes a dedicated page that randomly selects and displays a playlist, showing the playlist’s:
         -   [x] Playlist Image
@@ -71,7 +71,7 @@ Deployed Application: [Music Playlist Explorer Deployed Site](https://codepath-p
     -   [x] When the page is refreshed or reloaded, a new random playlist is displayed
         -   For example, navigating to the all playlists page and then back to the featured playlist page should result in a new random playlist being displayed
         -   Note that because your algorithm will not be truly random, it is possible that the same playlist will feature twice in a row.
-        -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself refreshing the featured page more than once.
+        -   [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself refreshing the featured page more than once.
     -   [x] Application includes a navigation bar or some other mechanism such that users can navigate to the page with all playlists from the featured page and vice versa without using the browser's back and forward buttons.
 
 #### STRETCH FEATURES
@@ -87,7 +87,7 @@ Deployed Application: [Music Playlist Explorer Deployed Site](https://codepath-p
             -   [x] Title
             -   [x] Artist
     -   [x] The resulting playlist should display in the grid view.
-    -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist.
+    -   [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist.
 
 -   [x] **Edit Existing Playlists**
 
@@ -98,9 +98,9 @@ Deployed Application: [Music Playlist Explorer Deployed Site](https://codepath-p
         -   [x] Author
         -   [x] Songs
     -   [x] The playlist grid view and playlist detail modal should update to display any changes (see Required Features, Criterion 1 & 2).
-    -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself:
-        -   [ ] Editing all of a playlist's features (name, creator, AND songs)
-        -   [ ] Editing some of a playlist's features (name, creator, OR songs)
+    -   [x] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself:
+        -   [x] Editing all of a playlist's features (name, creator, AND songs)
+        -   [x] Editing some of a playlist's features (name, creator, OR songs)
 
 -   [x] **Delete Playlists**
 
@@ -137,9 +137,7 @@ Deployed Application: [Music Playlist Explorer Deployed Site](https://codepath-p
 
 ### Walkthrough Video
 
-`TODO://` Add the embedded URL code to your animated app walkthrough below, `ADD_EMBEDDED_CODE_HERE`. Make sure the video actually renders and is playable when viewing this README. Ensure your walkthrough showcases the presence and/or functionality of all features you implemented above (check them off as you film!). Pay attention to any **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS** checkboxes listed above to ensure graders see the full functionality of your website! (🚫 Remove this paragraph after adding walkthrough video)
-
-`ADD_EMBEDDED_CODE_HERE`
+<div style="position: relative; padding-bottom: 57.75401069518716%; height: 0;"><iframe src="https://www.loom.com/embed/64de726a05d2425690b82a7af8be73c2?sid=50a9a8d0-f5d2-43af-a341-6c71438dadbf" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 
 ### Reflection
 
