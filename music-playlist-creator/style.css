@@ -46,6 +46,7 @@ main {
 }
 
 footer {
+    color:white;
     background: linear-gradient(
         90deg,
         rgba(42, 123, 155, 1) 0%,
@@ -57,6 +58,10 @@ footer {
     border-width: 3px;
     height: 5vh;
     margin-top: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
 }
 
 .playlist-cards {
