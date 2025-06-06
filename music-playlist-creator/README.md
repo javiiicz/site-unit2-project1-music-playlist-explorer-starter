@@ -89,15 +89,15 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
     -   [x] The resulting playlist should display in the grid view.
     -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist.
 
--   [ ] **Edit Existing Playlists**
+-   [x] **Edit Existing Playlists**
 
-    -   [ ] Enable users to modify the details of existing playlists.
-    -   [ ] Add an edit button to each playlist tile.
-    -   [ ] Users can update the playlist:
-        -   [ ] Name
-        -   [ ] Author
-        -   [ ] Songs
-    -   [ ] The playlist grid view and playlist detail modal should update to display any changes (see Required Features, Criterion 1 & 2).
+    -   [x] Enable users to modify the details of existing playlists.
+    -   [x] Add an edit button to each playlist tile.
+    -   [x] Users can update the playlist:
+        -   [x] Name
+        -   [x] Author
+        -   [x] Songs
+    -   [x] The playlist grid view and playlist detail modal should update to display any changes (see Required Features, Criterion 1 & 2).
     -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself:
         -   [ ] Editing all of a playlist's features (name, creator, AND songs)
         -   [ ] Editing some of a playlist's features (name, creator, OR songs)
