@@ -17,6 +17,7 @@ function showModal(id) {
     document.getElementById("modal-author").textContent =
         playlist.playlist_author;
     document.querySelector(".delete-btn").dataset.id = id;
+    document.querySelector(".edit-btn").dataset.id = id;
 
     // Populate the song list
     dislaySongs(modal_songs, false);
@@ -65,26 +66,23 @@ function addModalListeners() {
             event.stopPropagation();
         });
 
-    let mainForm = document.querySelector("#main-form");
-    let subForm = document.querySelector("#sub-form");
-    let searchForm = document.querySelector("#search-form");
 
-    mainForm.addEventListener("submit", (event) => {
+    document.querySelector("#main-form").addEventListener("submit", (event) => {
         event.preventDefault();
         addNewPlaylist();
     });
 
-    subForm.addEventListener("submit", (event) => {
+    document.querySelector("#sub-form").addEventListener("submit", (event) => {
         event.preventDefault();
         addNewSong();
     });
 
-    searchForm.addEventListener("submit", (event) => {
+    document.querySelector("#search-form").addEventListener("submit", (event) => {
         event.preventDefault();
         search();
     });
 
-    searchForm.addEventListener("keydown", (event) => {
+    document.querySelector("#search-form").addEventListener("keydown", (event) => {
         if (event.key === "Enter") {
             event.preventDefault();
             search();
@@ -172,6 +170,31 @@ function createSongCard(song) {
     
     <div class="duration-container">
         <p class="song-duration">${durationDisplay}</p>
+    </div>
+    `;
+
+    return card;
+}
+
+function createEditSongCard(song) {
+    let card = document.createElement("article");
+    card.classList.add("song-card");
+    let duration = song.song_duration;
+
+    card.innerHTML = `
+    <img
+        src="${song.song_img}"
+        alt="Song Art"
+        height="100%"
+    />
+    <div class="song-info">
+        <input form='edit-form' class="edit-song-name" type="text" value="${song.song_name}">
+        <input form='edit-form' class="edit-song-artist" type="text" value="${song.song_artist}">
+        <input form='edit-form' class="edit-song-album" type="text" value="${song.song_album}">
+    </div>
+    
+    <div class="duration-container">
+        <input form='edit-form' class="edit-song-duration" type="text" value="${duration}">
     </div>
     `;
 
@@ -357,7 +380,7 @@ function toggleAddModal() {
 
 function addNewSong() {
     const song = {
-        song_img: "https://picsum.photos/500",
+        song_img: "./assets/img/song.png",
         song_name: document.querySelector("#song-name-input").value,
         song_artist: document.querySelector("#song-name-artist").value,
         song_album: document.querySelector("#song-name-album").value,
@@ -372,6 +395,7 @@ function addNewSong() {
 
     document.querySelector("#sub-form").reset();
 }
+
 
 function addNewPlaylist() {
     let playlist = {
@@ -414,6 +438,79 @@ function search() {
 function clear() {
     displayCards(currentData);
     document.querySelector("#search-form").reset();
+}
+
+
+function toggleEditModal() {
+    let editModal = document.querySelector("#edit-modal");
+
+    if (editModal.classList.contains("show-overlay")) {
+        editModal.classList.remove("show-overlay");
+        editPlaylist()
+        document.querySelector('#edit-song-list-container').innerHTML = ""
+    } else {
+        editModal.classList.add("show-overlay");
+    }
+}
+
+function edit(btn) {
+    let id = parseInt(btn.dataset.id);
+    let playlist = currentData.find((x) => x.playlistID === id);
+    document.querySelector('#edit-modal-img').src = playlist.playlist_art
+    document.querySelector('.edit-name').value = playlist.playlist_name
+    document.querySelector('.edit-author').value = playlist.playlist_author
+
+    playlist.songs.forEach(song => {
+        let card = createEditSongCard(song);
+
+        document.querySelector('#edit-song-list-container').appendChild(card)
+    })
+
+    toggleEditModal()
+}
+
+function editPlaylist() {
+    let id = parseInt(document.querySelector('.edit-btn').dataset.id)
+
+    let oldPlaylist = currentData.find((x) => x.playlistID === id)
+
+    let filteredData = currentData.filter((x) => x.playlistID !== id);
+
+    let newPlaylist = {
+        playlistID: oldPlaylist.playlistID,
+        playlist_name: document.querySelector(".edit-name").value,
+        playlist_author: document.querySelector(".edit-author").value,
+        playlist_art: oldPlaylist.playlist_art,
+        date_added: oldPlaylist.date_added,
+        songs: [],
+        like_count: oldPlaylist.like_count,
+    }
+
+    let songs = document.querySelector('#edit-song-list-container').children;
+    for (let i = 0; i < songs.length; i++) {
+        song = songs[i]
+        let songName = song.children[1].children[0].value;
+        let songArtist = song.children[1].children[1].value;
+        let songAlbum = song.children[1].children[2].value;
+        let songDuration = song.children[2].children[0].value;
+
+        let newSong = {
+            song_img: "./assets/img/song.png",
+            song_name: songName,
+            song_artist: songArtist,
+            song_album: songAlbum,
+            song_duration: songDuration
+        }
+
+        newPlaylist.songs.push(newSong)
+    }
+
+    filteredData.push(newPlaylist)
+
+    currentData = filteredData;
+
+    hideModal()
+    displayCards(currentData)
 }
 
 // Close the dropdown menu if the user clicks outside of it
