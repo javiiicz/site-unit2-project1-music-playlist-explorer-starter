@@ -89,6 +89,7 @@
             </div>
         </div>
 
+
         <div id="add-modal" class="modal-overlay">
             <div id="add-modal-content" class="add-modal-content">
                 <h2 class="add-modal-title">Create a New Playlist</h2>
@@ -146,12 +147,13 @@
             </div>
         </div>
 
-        
+
         <div id="edit-modal" class="modal-overlay">
+            <form id="edit-form"></form>
             <div id="edit-modal-cont" class="modal-content">
                 <div class="playlist-image">
                     <img
-                        id="modal-img"
+                        id="edit-modal-img"
                         src="./assets/img/playlist.png"
                         width="100%"
                         alt="Playlist Art"
@@ -159,8 +161,8 @@
                 </div>
 
                 <div class="playlist-info">
-                    <h2 id='modal-name' class="modal-playlist-name">Playlist Name</h2>
-                    <p id='modal-author' class="modal-playlist-creator">Creator Name</p>
+                    <input form='edit-form' class="edit-name" type="text" value="Placeholder Name">
+                    <input form='edit-form' class="edit-author" type="text" value="Placeholder Author">
                 </div>
 
                 <div id='edit-song-list-container' class="song-list">
