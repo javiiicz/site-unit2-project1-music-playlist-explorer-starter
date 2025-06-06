@@ -3,7 +3,7 @@
         "playlistID": 1,
         "playlist_name": "Favorite Hits",
         "playlist_author": "John Doe",
-        "playlist_art": "../assets/art/sea.jpg",
+        "playlist_art": "./assets/art/sea.jpg",
         "date_added": "2023-10-01",
         "songs": [
             {
