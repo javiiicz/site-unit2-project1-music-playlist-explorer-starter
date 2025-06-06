@@ -2,7 +2,7 @@
 
 Submitted by: **Javier Carrillo Zamora**
 
-Estimated time spent: **13** hours spent in total
+Estimated time spent: **15** hours spent in total
 
 Deployed Application: [Music Playlist Explorer Deployed Site](https://codepath-proj-1.onrender.com)
 
@@ -143,11 +143,11 @@ https://www.loom.com/share/64de726a05d2425690b82a7af8be73c2?sid=fae11dcf-b293-41
 
 -   Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete?
 
-Add your response here
+    -  I felt each lab did teach me skills that I used in the project. Specifically, Lab 4 and the DOM manipulation helped a lot. The main feature that was hard to implement was the adding and editing of new playlists. I had to rethink what the best way of storing playlists were and ho to make adding and editing songs intuitive and simple for the user.
 
 -   If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc.
 
-Add your response here
+    - I would have spent more time on making the page responsive and revamping the way you edit playlists. I think right now the system is a little bit clunky. Also, some extra features that could be added in the future is maybe a song data file that remembers songs so that you could reuse them in other playlists and it remembers the artist and album.
 
 -   Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
