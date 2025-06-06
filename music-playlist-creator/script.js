@@ -199,7 +199,7 @@ function createEditSongCard(song) {
     </div>
     
     <div class="duration-container">
-        <input form='edit-form' class="edit-song-duration" type="text" value="${duration}">
+        <input form='edit-form' class="edit-song-duration" type="number" value="${duration}">
     </div>
     `;
 
