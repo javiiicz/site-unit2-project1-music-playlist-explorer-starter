@@ -52,20 +52,23 @@ function addModalListeners() {
             event.stopPropagation();
         });
 
-    document.querySelector("#add-modal").addEventListener("click", toggleAddModal);
+    document
+        .querySelector("#add-modal")
+        .addEventListener("click", toggleAddModal);
     document
         .getElementById("add-modal-content")
         .addEventListener("click", function (event) {
             event.stopPropagation();
         });
 
-    document.querySelector('#edit-modal').addEventListener("click", toggleEditModal);
+    document
+        .querySelector("#edit-modal")
+        .addEventListener("click", toggleEditModal);
     document
         .getElementById("edit-modal-cont")
         .addEventListener("click", function (event) {
             event.stopPropagation();
         });
-
 
     document.querySelector("#main-form").addEventListener("submit", (event) => {
         event.preventDefault();
@@ -77,17 +80,21 @@ function addModalListeners() {
         addNewSong();
     });
 
-    document.querySelector("#search-form").addEventListener("submit", (event) => {
-        event.preventDefault();
-        search();
-    });
-
-    document.querySelector("#search-form").addEventListener("keydown", (event) => {
-        if (event.key === "Enter") {
+    document
+        .querySelector("#search-form")
+        .addEventListener("submit", (event) => {
             event.preventDefault();
             search();
-        }
-    });
+        });
+
+    document
+        .querySelector("#search-form")
+        .addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                search();
+            }
+        });
 
     document.querySelector(".clear-btn").addEventListener("click", (event) => {
         event.preventDefault();
@@ -107,12 +114,10 @@ function loadPlaylists() {
             return response.json();
         })
         .then((data) => {
-            // Sort before (later)
 
             currentData = data;
 
             // Convert each playlist into playlist card element
-            //console.log(data)
             displayCards(currentData);
             console.log("succeess!");
         })
@@ -305,7 +310,7 @@ function del_playlist(btn) {
     let id = parseInt(btn.dataset.id);
     let filteredData = currentData.filter((x) => x.playlistID !== id);
     currentData = filteredData;
-    displayCards();
+    displayCards(currentData);
 }
 
 function displayCards(data) {
@@ -396,7 +401,6 @@ function addNewSong() {
     document.querySelector("#sub-form").reset();
 }
 
-
 function addNewPlaylist() {
     let playlist = {
         playlistID: Date.now(),
@@ -440,14 +444,13 @@ function clear() {
     document.querySelector("#search-form").reset();
 }
 
-
 function toggleEditModal() {
     let editModal = document.querySelector("#edit-modal");
 
     if (editModal.classList.contains("show-overlay")) {
         editModal.classList.remove("show-overlay");
-        editPlaylist()
-        document.querySelector('#edit-song-list-container').innerHTML = ""
+        editPlaylist();
+        document.querySelector("#edit-song-list-container").innerHTML = "";
     } else {
         editModal.classList.add("show-overlay");
     }
@@ -456,23 +459,23 @@ function toggleEditModal() {
 function edit(btn) {
     let id = parseInt(btn.dataset.id);
     let playlist = currentData.find((x) => x.playlistID === id);
-    document.querySelector('#edit-modal-img').src = playlist.playlist_art
-    document.querySelector('.edit-name').value = playlist.playlist_name
-    document.querySelector('.edit-author').value = playlist.playlist_author
+    document.querySelector("#edit-modal-img").src = playlist.playlist_art;
+    document.querySelector(".edit-name").value = playlist.playlist_name;
+    document.querySelector(".edit-author").value = playlist.playlist_author;
 
-    playlist.songs.forEach(song => {
+    playlist.songs.forEach((song) => {
         let card = createEditSongCard(song);
 
-        document.querySelector('#edit-song-list-container').appendChild(card)
-    })
+        document.querySelector("#edit-song-list-container").appendChild(card);
+    });
 
-    toggleEditModal()
+    toggleEditModal();
 }
 
 function editPlaylist() {
-    let id = parseInt(document.querySelector('.edit-btn').dataset.id)
+    let id = parseInt(document.querySelector(".edit-btn").dataset.id);
 
-    let oldPlaylist = currentData.find((x) => x.playlistID === id)
+    let oldPlaylist = currentData.find((x) => x.playlistID === id);
 
     let filteredData = currentData.filter((x) => x.playlistID !== id);
 
@@ -484,11 +487,11 @@ function editPlaylist() {
         date_added: oldPlaylist.date_added,
         songs: [],
         like_count: oldPlaylist.like_count,
-    }
+    };
 
-    let songs = document.querySelector('#edit-song-list-container').children;
+    let songs = document.querySelector("#edit-song-list-container").children;
     for (let i = 0; i < songs.length; i++) {
-        song = songs[i]
+        song = songs[i];
         let songName = song.children[1].children[0].value;
         let songArtist = song.children[1].children[1].value;
         let songAlbum = song.children[1].children[2].value;
@@ -499,34 +502,35 @@ function editPlaylist() {
             song_name: songName,
             song_artist: songArtist,
             song_album: songAlbum,
-            song_duration: songDuration
-        }
+            song_duration: songDuration,
+        };
 
-        newPlaylist.songs.push(newSong)
+        newPlaylist.songs.push(newSong);
     }
 
-    filteredData.push(newPlaylist)
+    filteredData.push(newPlaylist);
 
     currentData = filteredData;
 
-    hideModal()
-    displayCards(currentData)
+    hideModal();
+    displayCards(currentData);
 }
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function (event) {
-    if (!event.target.matches(".dropbtn")) {
-        if (
-            document
-                .querySelector(".dropdown-content")
-                .classList.contains("show")
-        ) {
-            document
-                .querySelector(".dropdown-content")
-                .classList.remove("show");
+function addDropDownListeners() {
+    window.onclick = function (event) {
+        if (!event.target.matches(".dropbtn")) {
+            if (
+                document
+                    .querySelector(".dropdown-content")
+                    .classList.contains("show")
+            ) {
+                document
+                    .querySelector(".dropdown-content")
+                    .classList.remove("show");
+            }
         }
-    }
-};
+    };
+}
 
 // call functions depending on page
 if (
@@ -536,6 +540,7 @@ if (
     console.log("This code is running inside index.html");
     loadPlaylists();
     addModalListeners();
+    addDropDownListeners();
 } else if (window.location.pathname.endsWith("featured.html")) {
     console.log("Running featured page code");
     populateFeaturedPlaylist();
