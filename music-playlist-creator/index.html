@@ -38,17 +38,18 @@
                         Add New Playlist
                     </button>
 
-                    <form class="search-tab">
+                    <form id="search-form" class="search-tab">
                         <label>Search</label>
-                        <input type="text">
+                        <input id='search-text' type="text">
 
-                        <input id="radio1" type="radio" value="name" name="search">
+                        <input id="radio1" type="radio" value="name" name="search" checked="true">
                         <label for="radio1">Name</label>
 
                         <input id="radio2" type="radio" value="author" name="search">
                         <label for="radio2">Author</label>
 
                         <button class="search-btn" type="submit">Search</button>
+                        <button class="clear-btn">Clear</button>
                     </form>
 
                 </section>
@@ -142,6 +143,29 @@
 
                 <button form="main-form" type="submit" class="main-submit form-btn">Submit</button>
                 
+            </div>
+        </div>
+
+        
+        <div id="edit-modal" class="modal-overlay">
+            <div id="edit-modal-cont" class="modal-content">
+                <div class="playlist-image">
+                    <img
+                        id="modal-img"
+                        src="./assets/img/playlist.png"
+                        width="100%"
+                        alt="Playlist Art"
+                    />
+                </div>
+
+                <div class="playlist-info">
+                    <h2 id='modal-name' class="modal-playlist-name">Playlist Name</h2>
+                    <p id='modal-author' class="modal-playlist-creator">Creator Name</p>
+                </div>
+
+                <div id='edit-song-list-container' class="song-list">
+                    
+                </div>
             </div>
         </div>
 

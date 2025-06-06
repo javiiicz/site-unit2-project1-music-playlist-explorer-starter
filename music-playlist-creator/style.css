@@ -68,6 +68,7 @@ footer {
     gap: 30px;
     max-width: 1500px;
     align-self: center;
+    min-height: 60vh;
 }
 
 .card {
@@ -402,7 +403,6 @@ nav {
 .home-main {
     display: flex;
     flex-direction: column;
-    width: 100%;
     padding: 20px;
 }
 
@@ -434,7 +434,7 @@ nav {
     gap:5px;
 }
 
-.search-btn {
+.search-btn, .clear-btn {
     color:white;
     background-color: rgb(255,255,255,0.3);
     padding: 5px;
