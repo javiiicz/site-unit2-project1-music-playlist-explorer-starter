@@ -69,6 +69,7 @@ footer {
     max-width: 1500px;
     align-self: center;
     min-height: 60vh;
+    flex-grow: 1;
 }
 
 .card {
