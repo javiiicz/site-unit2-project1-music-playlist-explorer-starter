@@ -2,6 +2,8 @@ const modal = document.getElementById("modal");
 const content = document.getElementById("modal-cont");
 let currentData = [];
 
+let newPlaylistSongs = [];
+
 function showModal(id) {
     // Given the id of the playlist we want to find the corresponding object in the data
     // and populate the modal
@@ -27,6 +29,8 @@ function hideModal() {
 
     // handle the old songs
     document.getElementById("song-list-container").innerHTML = "";
+
+    
 }
 
 function addCardListeners() {
@@ -44,10 +48,31 @@ function addModalListeners() {
     // Add modal event listeners. Be midful of ignoring clicks in content
     modal.addEventListener("click", hideModal);
     document
+        .getElementById("add-modal-content")
+        .addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+
+    let addModal = document.querySelector('#add-modal')
+    addModal.addEventListener("click", toggleAddModal);
+    document
         .getElementById("modal-cont")
         .addEventListener("click", function (event) {
             event.stopPropagation();
         });
+
+    let mainForm = document.querySelector("#main-form");
+    let subForm = document.querySelector("#sub-form");
+
+    mainForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        addNewPlaylist()
+    })
+
+    subForm.addEventListener('submit', (event) => {
+        event.preventDefault()
+        addNewSong()
+    })
 }
 
 function loadPlaylists() {
@@ -293,6 +318,62 @@ function sortDates() {
     });
     currentData = sortedData;
     displayCards();
+}
+
+
+function toggleAddModal() {
+    let addModal = document.querySelector('#add-modal')
+
+    if (addModal.classList.contains('show-overlay')) {
+        addModal.classList.remove('show-overlay')
+        // handle forms
+        newPlaylistSongs = []
+        document.querySelector('.add-song-list').innerHTML = ''
+        document.querySelector('#main-form').reset()
+        document.querySelector('#sub-form').reset()
+    } else {
+        addModal.classList.add('show-overlay')
+    }
+    
+}
+
+
+function addNewSong() {
+    const song = {
+        song_img: "https://picsum.photos/500",
+        song_name: document.querySelector('#song-name-input').value,
+        song_artist: document.querySelector('#song-name-artist').value,
+        song_album: document.querySelector('#song-name-album').value,
+        song_duration: document.querySelector('#song-name-duration').value
+    }
+
+    newPlaylistSongs.push(song)
+
+    let card = createSongCard(song)
+    
+    document.querySelector(".add-song-list").appendChild(card)
+
+    document.querySelector('#sub-form').reset()
+}
+
+
+function addNewPlaylist() {
+    let playlist = {
+        playlistID: Date.now(),
+        playlist_name: document.querySelector('#main-form-name').value,
+        playlist_author: document.querySelector('#main-form-author').value,
+        playlist_art: document.querySelector('#main-form-art').value,
+        date_added: Date.now().toString(),
+        songs: newPlaylistSongs,
+        like_count: 0
+    }
+
+    currentData.push(playlist)
+    displayCards()
+
+    document.querySelector('#main-form').reset()
+    newPlaylistSongs = []
+    document.querySelector('.add-song-list').innerHTML = ''
 }
 
 
