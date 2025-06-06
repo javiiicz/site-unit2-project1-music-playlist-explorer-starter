@@ -137,7 +137,7 @@ Deployed Application: [Music Playlist Explorer Deployed Site](https://codepath-p
 
 ### Walkthrough Video
 
-<div style="position: relative; padding-bottom: 57.75401069518716%; height: 0;"><iframe src="https://www.loom.com/embed/64de726a05d2425690b82a7af8be73c2?sid=50a9a8d0-f5d2-43af-a341-6c71438dadbf" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
+https://www.loom.com/share/64de726a05d2425690b82a7af8be73c2?sid=fae11dcf-b293-41e2-80e0-0e4f4558c19a
 
 ### Reflection
 
