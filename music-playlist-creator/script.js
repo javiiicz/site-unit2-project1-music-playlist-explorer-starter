@@ -250,6 +250,9 @@ function shuffle(btn) {
     }
 }
 
+
+// Fisher-Yates Shuffle
+// Obtained from stack overflow
 function shuffleArray(array) {
     let currentIndex = array.length,
         randomIndex;
