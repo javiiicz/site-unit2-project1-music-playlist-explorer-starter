@@ -151,7 +151,7 @@ https://www.loom.com/share/64de726a05d2425690b82a7af8be73c2?sid=fae11dcf-b293-41
 
 -   Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
 
-Add your response here
+    - My demo pretty much went as planned, I had practiced beforehand to make sure I hit all the talking points in the specified time. Something that didn't go as planned was that in my computer I had autocompletions for when I was creating a new playlist. However, on demo time I was not on my computer and didn't have that option, slowing me down. One of my peers involved the audience when adding songs, and I think that made the demo a little bit more fun and interactive.
 
 ### Open-source libraries used
 
