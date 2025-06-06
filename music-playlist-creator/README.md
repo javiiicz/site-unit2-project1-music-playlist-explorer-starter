@@ -2,9 +2,9 @@
 
 Submitted by: **Javier Carrillo Zamora**
 
-Estimated time spent: **6** hours spent in total
+Estimated time spent: **13** hours spent in total
 
-Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD_LINK_HERE)
+Deployed Application: [Music Playlist Explorer Deployed Site](https://codepath-proj-1.onrender.com)
 
 ### Application Features
 
@@ -157,8 +157,8 @@ Add your response here
 
 ### Open-source libraries used
 
--   Add any links to open-source libraries used in your project.
+-   n/a
 
 ### Shout out
 
-Give a shout out to somebody from your cohort that especially helped you during your project. This can be a fellow peer, instructor, TA, mentor, etc.
+Shout out to Gabriel for the good vibes and the excellent lectures this week. I fell like I learned a whole new side of this JavaScript that I did not know of 🔥
