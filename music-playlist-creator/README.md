@@ -25,7 +25,7 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
         -   [x] Author
         -   [x] Like count
 
--   [ ] **Playlist Details**
+-   [x] **Playlist Details**
 
     -   [x] Create a modal pop-up view that displays detailed information about a playlist when a user clicks on a playlist tile.
     -   [x] The modal should show the playlist's:
@@ -53,8 +53,8 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
             -   [x] The like count on the playlist tile should decrease by 1.
             -   [x] There should be visual feedback (such as the heart turning a different color) to show that the playlist has been unliked by the user.
         -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please film yourself liking and unliking:
-            -   [ ] a playlist with a like count of 0
-            -   [ ] a playlist with a non-zero like count
+            -   [x] a playlist with a like count of 0
+            -   [x] a playlist with a non-zero like count
 
 -   [x] **Shuffle Songs**
     -   [x] Enable users to shuffle the songs within a playlist using a shuffle button in the playlist's detail modal.
@@ -72,21 +72,21 @@ Deployed Application (**required**): [Music Playlist Explorer Deployed Site](ADD
         -   For example, navigating to the all playlists page and then back to the featured playlist page should result in a new random playlist being displayed
         -   Note that because your algorithm will not be truly random, it is possible that the same playlist will feature twice in a row.
         -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** In addition to showcasing the above features, for ease of grading, please show yourself refreshing the featured page more than once.
-    -   [ ] Application includes a navigation bar or some other mechanism such that users can navigate to the page with all playlists from the featured page and vice versa without using the browser's back and forward buttons.
+    -   [x] Application includes a navigation bar or some other mechanism such that users can navigate to the page with all playlists from the featured page and vice versa without using the browser's back and forward buttons.
 
 #### STRETCH FEATURES
 
--   [ ] **Add New Playlists**
+-   [x] **Add New Playlists**
 
-    -   [ ] Allow users to create new playlists.
-    -   [ ] Using a form, users can input playlist:
-        -   [ ] Name
-        -   [ ] Author
-        -   [ ] Cover image
-        -   [ ] Add one or more songs to the playlist, specifying the song's:
-            -   [ ] Title
-            -   [ ] Artist
-    -   [ ] The resulting playlist should display in the grid view.
+    -   [x] Allow users to create new playlists.
+    -   [x] Using a form, users can input playlist:
+        -   [x] Name
+        -   [x] Author
+        -   [x] Cover image
+        -   [x] Add one or more songs to the playlist, specifying the song's:
+            -   [x] Title
+            -   [x] Artist
+    -   [x] The resulting playlist should display in the grid view.
     -   [ ] **VIDEO WALKTHROUGH SPECIAL INSTRUCTIONS:** For ease of grading, please show yourself adding at least two songs to the playlist.
 
 -   [ ] **Edit Existing Playlists**

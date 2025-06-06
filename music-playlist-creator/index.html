@@ -33,6 +33,23 @@
                             <button onclick="sortDates()">By Date Added</button>
                         </div>
                     </div>
+                    
+                    <button class="add-button" onclick="toggleAddModal()">
+                        Add New Playlist
+                    </button>
+
+                    <form class="search-tab">
+                        <label>Search</label>
+                        <input type="text">
+
+                        <input id="radio1" type="radio" value="name" name="search">
+                        <label for="radio1">Name</label>
+
+                        <input id="radio2" type="radio" value="author" name="search">
+                        <label for="radio2">Author</label>
+
+                        <button class="search-btn" type="submit">Search</button>
+                    </form>
 
                 </section>
                 <section id="playlist-container" class="playlist-cards">
@@ -63,8 +80,68 @@
                 <div id='song-list-container' class="song-list">
                     
                 </div>
-                <button class="delete-btn" onclick="del_playlist(this)">Delete</button>
+                <div>
+                    <button class="edit-btn" onclick="edit(this)">Edit</button>
+                    <button class="delete-btn" onclick="del_playlist(this)">Delete</button>
+                </div>
                 <button class="shuffle-btn" onclick="shuffle(this)">Shuffle</button>
+            </div>
+        </div>
+
+        <div id="add-modal" class="modal-overlay">
+            <div id="add-modal-content" class="add-modal-content">
+                <h2 class="add-modal-title">Create a New Playlist</h2>
+                
+                <form id="main-form"></form>
+                <form id="sub-form"></form>
+
+                <div class="form-group">
+                    <label form="main-form">Cover Image:</label>
+                    <input id="main-form-art" form="main-form" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Playlist Name:</label>
+                    <input id="main-form-name" form="main-form" type="text" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Playlist Author:</label>
+                    <input id="main-form-author" form="main-form" type="text" required>
+                </div>
+
+                <div class="sub-form-container">
+                    <h3 class="add-songs-title">Add Songs:</h3>
+
+                    <div class="form-group">
+                        <label>Song Name:</label>
+                        <input form="sub-form" type="text" id="song-name-input" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>Song Artist:</label>
+                        <input form="sub-form" type="text" id="song-name-artist" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Song Album:</label>
+                        <input form="sub-form" type="text" id="song-name-album" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Song Duration:</label>
+                        <input form="sub-form" type="text" id="song-name-duration" required>
+                    </div>
+
+                    <button form="sub-form" type="submit" class="form-btn">Add Song</button>
+                </div>
+                    
+                <div class="add-song-list">
+
+                </div>
+
+                <button form="main-form" type="submit" class="main-submit form-btn">Submit</button>
+                
             </div>
         </div>
 

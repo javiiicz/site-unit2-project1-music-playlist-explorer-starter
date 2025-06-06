@@ -350,24 +350,28 @@ nav {
 .tools {
     display: flex;
     flex-direction: row;
+    gap:5px;
 }
 
-.dropbtn {
+.dropbtn,
+.add-button {
     background-color: rgba(42, 123, 155, 1);
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
+    align-self: stretch;
+    min-height: 60px;
 }
 
 .dropbtn:hover,
-.dropbtn:focus {
+.dropbtn:focus,
+.add-button:hover {
     background-color: rgba(22, 93, 125, 1);
 }
 
 .dropdown {
-    position: relative;
     display: inline-block;
 }
 
@@ -395,9 +399,99 @@ nav {
     display: block;
 }
 
-.home-main{
+.home-main {
     display: flex;
     flex-direction: column;
     width: 100%;
     padding: 20px;
+}
+
+.edit-btn {
+    justify-self: start;
+    align-self: end;
+    padding: 10px;
+    font-weight: 800;
+    border-radius: 10px;
+    background-color: #d0d0d0;
+    box-shadow: 0px 0px 4px rgb(0, 0, 0, 0.2);
+    transition: transform 0.1s, background-color 0.2s;
+}
+
+.edit-btn:hover {
+    background-color: #81A4CD;
+
+}
+
+.search-tab {
+    background-color: rgba(42, 123, 155, 1);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:5px;
+}
+
+.search-btn {
+    color:white;
+    background-color: rgb(255,255,255,0.3);
+    padding: 5px;
+    border-color: white;
+}
+
+.add-modal-content {
+    background-color: #ffffff;
+    padding: 25px;
+    width: 60%;
+    border-radius: 25px;
+
+    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.8);
+
+    color: #555464;
+}
+
+.sub-form-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 20px;
+    border-style: solid;
+    margin: 20px 0;
+}
+
+.form-group {
+    padding: 2px;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 20px
+}
+
+.add-modal-title {
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.add-song-list {
+    grid-area: song-list;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 400px;
+    overflow: scroll;
+    padding: 20px;
+}
+
+.add-songs-title {
+    display: block;
+    width: 100%;
+}
+
+.form-btn {
+    padding: 5px;
+    background-color: #81A4CD;
+    color: white;
+    border-radius: 5px;
 }
