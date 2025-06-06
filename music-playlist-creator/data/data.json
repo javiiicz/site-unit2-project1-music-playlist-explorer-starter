@@ -180,7 +180,7 @@
                 "song_duration": 240
             },
             {
-                "song_img": "httpsum.photos/500",
+                "song_img": "./assets/img/song.png",
                 "song_name": "Dance Song 4",
                 "song_artist": "Artist T",
                 "song_album": "Album G",
