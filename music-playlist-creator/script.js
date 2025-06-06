@@ -29,8 +29,6 @@ function hideModal() {
 
     // handle the old songs
     document.getElementById("song-list-container").innerHTML = "";
-
-    
 }
 
 function addCardListeners() {
@@ -48,31 +46,55 @@ function addModalListeners() {
     // Add modal event listeners. Be midful of ignoring clicks in content
     modal.addEventListener("click", hideModal);
     document
+        .getElementById("modal-cont")
+        .addEventListener("click", function (event) {
+            event.stopPropagation();
+        });
+
+    document.querySelector("#add-modal").addEventListener("click", toggleAddModal);
+    document
         .getElementById("add-modal-content")
         .addEventListener("click", function (event) {
             event.stopPropagation();
         });
 
-    let addModal = document.querySelector('#add-modal')
-    addModal.addEventListener("click", toggleAddModal);
+    document.querySelector('#edit-modal').addEventListener("click", toggleEditModal);
     document
-        .getElementById("modal-cont")
+        .getElementById("edit-modal-cont")
         .addEventListener("click", function (event) {
             event.stopPropagation();
         });
 
     let mainForm = document.querySelector("#main-form");
     let subForm = document.querySelector("#sub-form");
+    let searchForm = document.querySelector("#search-form");
 
-    mainForm.addEventListener('submit', (event) => {
-        event.preventDefault()
-        addNewPlaylist()
-    })
+    mainForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        addNewPlaylist();
+    });
 
-    subForm.addEventListener('submit', (event) => {
-        event.preventDefault()
-        addNewSong()
-    })
+    subForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        addNewSong();
+    });
+
+    searchForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        search();
+    });
+
+    searchForm.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            search();
+        }
+    });
+
+    document.querySelector(".clear-btn").addEventListener("click", (event) => {
+        event.preventDefault();
+        clear();
+    });
 }
 
 function loadPlaylists() {
@@ -87,19 +109,13 @@ function loadPlaylists() {
             return response.json();
         })
         .then((data) => {
-            if (data.length === 0) {
-                console.log("Empty data");
-                showNoData();
-                return;
-            }
-
             // Sort before (later)
 
             currentData = data;
 
             // Convert each playlist into playlist card element
             //console.log(data)
-            displayCards();
+            displayCards(currentData);
             console.log("succeess!");
         })
         .catch((error) => {
@@ -160,15 +176,6 @@ function createSongCard(song) {
     `;
 
     return card;
-}
-
-function showNoData() {
-    let container = document.getElementById("playlist-container");
-    container.classList.add("container-no-data");
-
-    let notification = document.createElement("div");
-    notification.innerHTML = "<h2>No playlists to show</h2>";
-    container.appendChild(notification);
 }
 
 function toggleLike(btn) {
@@ -278,9 +285,21 @@ function del_playlist(btn) {
     displayCards();
 }
 
-function displayCards() {
+function displayCards(data) {
     document.querySelector(".playlist-cards").innerHTML = "";
-    currentData.forEach((playlist) => {
+
+    if (data.length === 0) {
+        let container = document.getElementById("playlist-container");
+        container.classList.add("container-no-data");
+
+        let notification = document.createElement("div");
+        notification.innerHTML = "<h2>No playlists to show</h2>";
+        container.appendChild(notification);
+
+        return;
+    }
+
+    data.forEach((playlist) => {
         //console.log('Creating playlist card for ' + playlist)
         let newCard = createPlaylistCard(playlist);
         //console.log(newCard);
@@ -292,100 +311,125 @@ function displayCards() {
     addCardListeners();
 }
 
-
 function toggleMenu() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
 function sortAlphabetically() {
-    let sortedData = currentData.sort((a,b) => (a.playlist_name.localeCompare(b.playlist_name)));
+    let sortedData = currentData.sort((a, b) =>
+        a.playlist_name.localeCompare(b.playlist_name)
+    );
     currentData = sortedData;
-    displayCards();
+    displayCards(currentData);
 }
-
 
 function sortLikes() {
-    let sortedData = currentData.sort((a,b) => (- parseInt(a.like_count) + parseInt(b.like_count)));
+    let sortedData = currentData.sort(
+        (a, b) => -parseInt(a.like_count) + parseInt(b.like_count)
+    );
     currentData = sortedData;
-    displayCards();
+    displayCards(currentData);
 }
-
 
 function sortDates() {
-    let sortedData = currentData.sort((a,b) => {
-        let res = ((new Date(a.date_added)) - (new Date(b.date_added)))
-        return res
+    let sortedData = currentData.sort((a, b) => {
+        let res = new Date(a.date_added) - new Date(b.date_added);
+        return res;
     });
     currentData = sortedData;
-    displayCards();
+    displayCards(currentData);
 }
-
 
 function toggleAddModal() {
-    let addModal = document.querySelector('#add-modal')
+    let addModal = document.querySelector("#add-modal");
 
-    if (addModal.classList.contains('show-overlay')) {
-        addModal.classList.remove('show-overlay')
+    if (addModal.classList.contains("show-overlay")) {
+        addModal.classList.remove("show-overlay");
         // handle forms
-        newPlaylistSongs = []
-        document.querySelector('.add-song-list').innerHTML = ''
-        document.querySelector('#main-form').reset()
-        document.querySelector('#sub-form').reset()
+        newPlaylistSongs = [];
+        document.querySelector(".add-song-list").innerHTML = "";
+        document.querySelector("#main-form").reset();
+        document.querySelector("#sub-form").reset();
     } else {
-        addModal.classList.add('show-overlay')
+        addModal.classList.add("show-overlay");
     }
-    
 }
-
 
 function addNewSong() {
     const song = {
         song_img: "https://picsum.photos/500",
-        song_name: document.querySelector('#song-name-input').value,
-        song_artist: document.querySelector('#song-name-artist').value,
-        song_album: document.querySelector('#song-name-album').value,
-        song_duration: document.querySelector('#song-name-duration').value
-    }
+        song_name: document.querySelector("#song-name-input").value,
+        song_artist: document.querySelector("#song-name-artist").value,
+        song_album: document.querySelector("#song-name-album").value,
+        song_duration: document.querySelector("#song-name-duration").value,
+    };
 
-    newPlaylistSongs.push(song)
+    newPlaylistSongs.push(song);
 
-    let card = createSongCard(song)
-    
-    document.querySelector(".add-song-list").appendChild(card)
+    let card = createSongCard(song);
 
-    document.querySelector('#sub-form').reset()
+    document.querySelector(".add-song-list").appendChild(card);
+
+    document.querySelector("#sub-form").reset();
 }
-
 
 function addNewPlaylist() {
     let playlist = {
         playlistID: Date.now(),
-        playlist_name: document.querySelector('#main-form-name').value,
-        playlist_author: document.querySelector('#main-form-author').value,
-        playlist_art: document.querySelector('#main-form-art').value,
+        playlist_name: document.querySelector("#main-form-name").value,
+        playlist_author: document.querySelector("#main-form-author").value,
+        playlist_art: document.querySelector("#main-form-art").value,
         date_added: Date.now().toString(),
         songs: newPlaylistSongs,
-        like_count: 0
-    }
+        like_count: 0,
+    };
 
-    currentData.push(playlist)
-    displayCards()
+    currentData.push(playlist);
+    displayCards(currentData);
 
-    document.querySelector('#main-form').reset()
-    newPlaylistSongs = []
-    document.querySelector('.add-song-list').innerHTML = ''
+    document.querySelector("#main-form").reset();
+    newPlaylistSongs = [];
+    document.querySelector(".add-song-list").innerHTML = "";
 }
 
+function search() {
+    let query = document.querySelector("#search-text").value;
+    let newData;
+
+    if (document.querySelector("#radio1").checked) {
+        newData = currentData.filter((x) =>
+            x.playlist_name.toLowerCase().includes(query.toLowerCase())
+        );
+    } else {
+        newData = currentData.filter((x) =>
+            x.playlist_author.toLowerCase().includes(query.toLowerCase())
+        );
+    }
+
+    displayCards(newData);
+
+    document.querySelector("#search-form").reset();
+}
+
+function clear() {
+    displayCards(currentData);
+    document.querySelector("#search-form").reset();
+}
 
 // Close the dropdown menu if the user clicks outside of it
 window.onclick = function (event) {
     if (!event.target.matches(".dropbtn")) {
-        if (document.querySelector(".dropdown-content").classList.contains("show")) {
-            document.querySelector(".dropdown-content").classList.remove("show")
+        if (
+            document
+                .querySelector(".dropdown-content")
+                .classList.contains("show")
+        ) {
+            document
+                .querySelector(".dropdown-content")
+                .classList.remove("show");
         }
     }
 };
-
 
 // call functions depending on page
 if (
