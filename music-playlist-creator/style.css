@@ -46,7 +46,7 @@ main {
 }
 
 footer {
-    color:white;
+    color: white;
     background: linear-gradient(
         90deg,
         rgba(42, 123, 155, 1) 0%,
@@ -154,6 +154,29 @@ p {
     gap: 5px;
 }
 
+.edit-modal-content {
+    background-color: #ffffff;
+    padding: 25px;
+    width: 60%;
+    max-width: 900px;
+    border-radius: 25px;
+
+    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.8);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 5fr;
+    grid-template-rows: 1fr 1.8fr 0.1fr;
+    grid-template-areas:
+        "playlist-image playlist-image playlist-info"
+        "song-list song-list song-list"
+        ". .  shuffle";
+    justify-items: center;
+    align-items: center;
+
+    color: #555464;
+    gap: 5px;
+}
+
 .playlist-image {
     grid-area: playlist-image;
     object-fit: cover;
@@ -203,6 +226,13 @@ p {
 }
 
 .playlist-info {
+    grid-area: playlist-info;
+    padding: 10%;
+    text-align: left;
+    width: 90%;
+}
+
+.edit-playlist-info {
     grid-area: playlist-info;
     padding: 10%;
     text-align: left;
@@ -576,23 +606,57 @@ nav {
     }
 
     .add-modal-content {
-    background-color: #ffffff;
-    padding: 25px;
-    width: 70%;
-    border-radius: 25px;
+        background-color: #ffffff;
+        padding: 25px;
+        width: 70%;
+        border-radius: 25px;
 
-    box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.8);
+        box-shadow: 0px 5px 15px rgb(0, 0, 0, 0.8);
 
-    color: #555464;
-}
+        color: #555464;
+    }
 
     .add-song-list {
-    grid-area: song-list;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    height: 100px;
-    overflow: scroll;
-    padding: 20px;
-}
+        grid-area: song-list;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        height: 100px;
+        overflow: scroll;
+        padding: 20px;
+    }
+
+    label {
+        font-size: 10px;
+    }
+
+    .modal-playlist-name {
+        font-size: 25px;
+    }
+
+    .modal-playlist-creator {
+        font-size: 15px;
+    }
+
+    .edit-modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .edit-name {
+        font-size: 15px;
+    }
+
+    .edit-author {
+        font-size: 10px;
+    }
+
+    .edit-playlist-info {
+        grid-area: playlist-info;
+        padding: 0;
+        text-align: left;
+        width: auto;
+    }
 }
